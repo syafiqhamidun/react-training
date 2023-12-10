@@ -50,3 +50,9 @@
 .blog-preview:hover {
   box-shadow: 1px 5px 8px black;
 }
+
+.blog-preview h2 {
+  font-size: 20px;
+  color: red;
+  margin-bottom: 8px;
+}
