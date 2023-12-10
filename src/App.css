@@ -26,8 +26,9 @@
 }
 
 .navbar a {
-  margin-left: 10px;
+  margin-left: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .navbar a:hover {
@@ -39,4 +40,13 @@
   width: 600px;
   margin: 40px auto;
   padding: 60px;
+}
+
+.blog-preview {
+  padding: 10px 16px;
+  margin: 20px 0;
+}
+
+.blog-preview:hover {
+  box-shadow: 1px 5px 8px black;
 }
