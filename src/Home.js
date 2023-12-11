@@ -1,4 +1,6 @@
-import { useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useState, useEffect } from "react";
+import BlogList from "./BlogList";
 
 const Home = () => {
 
@@ -8,16 +10,24 @@ const Home = () => {
         { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     ])
 
-    
+    const [name , setName] = useState('mario');
+
+    // use as delete button
+    const handleDelete = (id) => {
+        const newBlogs = blogs.filter(blog => blog.id !== id);
+        setBlogs(newBlogs);
+    }
+
+    useEffect(()=> {
+        // console.log(name)
+    }, [name]);
 
     return ( 
         <div className="home">
-            {blogs.map((book) => (
-                <div className="blog-preview" key={book.id}>
-                    <h2>{book.title}</h2>
-                    <p> written by {book.author}</p>
-                </div>
-            ))}
+            <BlogList blogs={blogs} titlele="This is my book" handleDelete={handleDelete} />
+            <button onClick={() => setName('luigi')} >change name</button>
+            <p>{name}</p>
+            {/* <BlogList blogs={blogs.filter((itik) => itik.author === "mario")}  titlele="mario's book" /> */}
         </div>
      );
 }
